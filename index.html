@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Érythrée — Ce que vous pouvez faire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1b1a;
+    --ink-soft: #55524d;
+    --paper: #ffffff;
+    --line: #e4e1db;
+    --accent: #a32638;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Archivo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 72px 24px 56px;
+  }
+
+  header {
+    margin-bottom: 48px;
+  }
+
+  .kicker {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.2;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .rule {
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    margin: 0 0 22px;
+    border: none;
+  }
+
+  .intro {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 46ch;
+  }
+
+  .section {
+    margin-bottom: 44px;
+  }
+
+  .section-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 0 4px;
+    color: var(--accent);
+  }
+
+  .section-note {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+
+  .section .section-title + nav.links,
+  .section .section-note + nav.links {
+    margin-top: 16px;
+  }
+
+  nav.links {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--line);
+  }
+
+  .link-row {
+    display: block;
+    padding: 20px 2px;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .link-row:hover .link-title,
+  .link-row:focus-visible .link-title {
+    color: var(--accent);
+  }
+
+  .link-row.static {
+    cursor: default;
+  }
+
+  .link-row.static:hover .link-title {
+    color: var(--ink);
+  }
+
+  .link-row:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  .link-title {
+    display: block;
+    font-family: 'Archivo', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    transition: color 0.15s ease;
+  }
+
+  .link-desc {
+    display: block;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  footer a {
+    color: var(--ink-soft);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .link-title { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+    <header>
+      <p class="kicker">Érythrée</p>
+      <h1>Comment s'engager</h1>
+      <hr class="rule">
+      <p class="intro">
+        Depuis 2001, toute presse indépendante est interdite en Érythrée : les derniers journaux
+        privés ont été fermés en une semaine, et une dizaine de journalistes arrêtés cette
+        année-là sont toujours portés disparus, plus de vingt ans après. La seule université du
+        pays, celle d'Asmara, a été fermée en 2006. Le service national, censé durer 18 mois,
+        se prolonge le plus souvent indéfiniment et est assimilé par plusieurs organisations à une
+        forme d'esclavage moderne. Aucune élection n'a jamais eu lieu depuis l'indépendance.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">S'informer</h2>
+      <nav class="links" id="links-inform"></nav>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Vidéos</h2>
+      <nav class="links" id="links-videos"></nav>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Rejoindre une association</h2>
+      <p class="section-note">
+        Nous ne sommes pas affiliés à One Day Seyoum — elle est mentionnée ici car c'est l'une
+        des associations les plus qualifiées sur le sujet, travaillant avec d'autres ONG comme
+        Amnesty International.
+      </p>
+      <nav class="links" id="links-join"></nav>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Sans rejoindre une association</h2>
+      <p class="section-note">
+        Pas prêt·e à t'engager plus loin ? Ces gestes comptent aussi.
+      </p>
+      <nav class="links" id="links-other"></nav>
+    </section>
+
+    <footer>
+      Page indépendante à but informatif. Son objectif est de sensibiliser à ce qui se passe
+      en Érythrée et d'aider à faire changer les choses.
+    </footer>
+  </div>
+
+  <script>
+    // ------------------------------------------------------------------
+    // MODIFIE CES TROIS LISTES POUR CHANGER LES LIENS DE LA PAGE.
+    // Chaque lien a un titre, une description courte, et une URL.
+    // Ajoute, supprime ou réordonne les lignes comme tu veux.
+    // Pour un lien sans description, laisse desc: "".
+    // ------------------------------------------------------------------
+
+    // Section "S'informer"
+    const LINKS_INFORM = [
+      {
+        title: "Rapporteur spécial de l'ONU sur l'Érythrée",
+        desc: "Rapports officiels des Nations Unies.",
+        url: "https://www.ohchr.org/en/special-procedures/sr-eritrea"
+      },
+      {
+        title: "Amnesty International — Rapport Érythrée",
+        desc: "Situation des droits humains, dernières mises à jour.",
+        url: "https://www.amnesty.org/fr/location/africa/east-africa-the-horn-and-great-lakes/eritrea/report-eritrea/"
+      },
+      {
+        title: "Human Rights Concern – Eritrea (HRCE)",
+        desc: "Bonne source d'informations, avec de nombreux articles sur divers sujets liés à l'Érythrée — en anglais.",
+        url: "https://hrc-eritrea.org/about/"
+      }
+    ];
+
+    // Section "Vidéos"
+    const LINKS_VIDEOS = [
+      {
+        title: "Envoyé Spécial — Érythrée, la terre des évadés (France 2)",
+        desc: "Reportage réalisé directement en Érythrée.",
+        url: "https://youtu.be/ZO2medNPjHA?si=_6pHpM7ydHXfvpqX"
+      },
+      {
+        title: "Escaping Eritrea (full documentary) | FRONTLINE",
+        desc: "Documentaire en anglais, complet, qui regroupe de nombreux témoignages.",
+        url: "https://youtu.be/jquCbpLYw7Q?si=xmceZn8eRI4jUg1j"
+      }
+    ];
+
+    // Section "Rejoindre une association"
+    const LINKS_JOIN = [
+      {
+        title: "Rejoindre / faire un don — One Day Seyoum",
+        desc: "Faire un don, devenir membre ou suivre l'organisation sur les réseaux — tout est réuni sur cette page.",
+        url: "https://onedayseyoum.org/join"
+      }
+      // Ajoute d'autres associations ici si besoin.
+    ];
+
+    // Section "Sans rejoindre une association"
+    // Ces items n'ont pas de lien (pas encore de page réseaux sociaux) —
+    // ils sont affichés comme du texte, non cliquables.
+    const LINKS_OTHER = [
+      {
+        title: "Partager sur les réseaux et cette page",
+        desc: "Diffuser la cause, sensibiliser autour de soi, et essayer d'attirer l'attention des médias.",
+        url: "#"
+      }
+    ];
+
+    function renderLinks(containerId, links) {
+      const nav = document.getElementById(containerId);
+      links.forEach(link => {
+        const isStatic = !link.url || link.url === '#';
+        const el = document.createElement(isStatic ? 'div' : 'a');
+        el.className = 'link-row' + (isStatic ? ' static' : '');
+        if (!isStatic) {
+          el.href = link.url;
+          el.target = '_blank';
+          el.rel = 'noopener noreferrer';
+        }
+
+        const title = document.createElement('span');
+        title.className = 'link-title';
+        title.textContent = link.title;
+
+        el.appendChild(title);
+
+        if (link.desc) {
+          const desc = document.createElement('span');
+          desc.className = 'link-desc';
+          desc.textContent = link.desc;
+          el.appendChild(desc);
+        }
+
+        nav.appendChild(el);
+      });
+    }
+
+    renderLinks('links-inform', LINKS_INFORM);
+    renderLinks('links-videos', LINKS_VIDEOS);
+    renderLinks('links-join', LINKS_JOIN);
+    renderLinks('links-other', LINKS_OTHER);
+  </script>
+
+</body>
+</html>
